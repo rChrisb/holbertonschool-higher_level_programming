@@ -29,6 +29,6 @@ for i in range(0, 9):
         if (i == 8 and x == 6) or (i == 8 and x == 7):
             continue
         if i == 8 and x == 9:
-            print(f"{i}{x}")
+            print("{:1d}{:1d}".format(i, x))
         elif i != x:
-            print(f"{i}{x}", end=', ')
+            print("{:1d}{:1d}".format(i, x), end=', ')
