@@ -15,7 +15,7 @@ def roman_to_int(roman_string):
                 if roman_string[c - 1] == "X":
                     if roman_string[c - 1] != roman_string[- 1]:
                         if roman_string[c] == "C" or roman_string[c] == "L":
-                            sum -= 2
+                            sum -= 10
                 if roman_string[c - 1] == "C":
                     if roman_string[c - 1] != roman_string[- 1]:
                         if roman_string[c] == "D" or roman_string[c] == "M":
