@@ -4,13 +4,13 @@ def roman_to_int(roman_string):
     sum = 0
     if roman_string is None:
         return sum
-    for char in range(len(roman_string)):
+    for c in range(len(roman_string)):
         for (letter, value) in dic.items():
-            if roman_string[char] is letter:
+            if roman_string[c] is letter:
                 sum += value
-                if roman_string[char - 1] == "I":
-                    if roman_string[char - 1] != roman_string[- 1]:
-                        if roman_string[char] == "V" or roman_string[char] == "X":
+                if roman_string[c - 1] == "I":
+                    if roman_string[c - 1] != roman_string[- 1]:
+                        if roman_string[c] == "V" or roman_string[c] == "X":
                             sum -= 2
 
     return sum
