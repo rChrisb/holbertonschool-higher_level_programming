@@ -16,5 +16,7 @@ def safe_print_list_integers(my_list=[], x=0):
             times += 1
         return times - skip
     except IndexError:
+        if times < x:
+            raise
         print()
         return times - skip
