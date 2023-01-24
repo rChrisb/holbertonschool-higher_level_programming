@@ -8,9 +8,10 @@ def roman_to_int(roman_string):
         for (letter, value) in dic.items():
             if roman_string[char] is letter:
                 sum += value
-                if roman_string[char - 1] is "I":
-                    if roman_string[char] is not "I" and not None:
+                if roman_string[char - 1] == "I":
+                    if roman_string[char] != "I" and not None:
                         sum -= 2
-                    elif roman_string[char] is "I":
+                    elif roman_string[char] == "I":
                         sum += 2
+
     return sum
