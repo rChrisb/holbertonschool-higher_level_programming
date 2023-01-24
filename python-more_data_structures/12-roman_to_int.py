@@ -9,8 +9,8 @@ def roman_to_int(roman_string):
             if roman_string[char] is letter:
                 sum += value
                 if roman_string[char - 1] is "I":
-                    if roman_string[char] is not "I":
+                    if roman_string[char] is not "I" and not None:
                         sum -= 2
-                    else:
+                    elif roman_string[char] is "I":
                         sum += 2
     return sum
