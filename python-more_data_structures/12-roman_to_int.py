@@ -13,7 +13,7 @@ def roman_to_int(roman_string):
                         if roman_string[c] == "V" or roman_string[c] == "X":
                             sum -= 2
                 if roman_string[c - 1] == "X":
-                    if roman_string[c - 1] != roman_string[- 1]:
+                    if c - 1 != len(roman_string) - 1:
                         if roman_string[c] == "C" or roman_string[c] == "L":
                             sum -= 20
                 if roman_string[c - 1] == "C":
