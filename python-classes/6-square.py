@@ -13,6 +13,11 @@ class Square:
 
     def __init__(self, size=0, position=(0, 0)):
         self.__size = size
+        if type(position) is not tuple:
+            raise TypeError("position must be a tuple of 2 positive integers")
+
+        if type(position[0]) is not int or type(position[1]) is not int:
+            raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = position
 
     @property
