@@ -6,6 +6,9 @@
 def matrix_divided(matrix, div):
     """function that divides all elements of a matrix"""
 
+    m = matrix
+    m_error = "matrix must be a matrix (list of lists) of integers/floats"
+
     if type(div) not in [int, float]:
         raise TypeError("div must be a number")
     if div == 0:
@@ -13,9 +16,9 @@ def matrix_divided(matrix, div):
     for line in matrix:
         for element in line:
             if type(element) not in [int, float]:
-                raise TypeError("matrix must be a matrix (list of lists)\
-                    of integers/floats")
+                raise TypeError(m_error)
     for i in range(len(matrix)):
         if len(matrix[i]) != len(matrix[i - 1]):
             raise TypeError("Each row of the matrix must have the same size")
-    return (list(map(lambda line: list(map(lambda e: round(e / div, 2), line)), matrix)))
+    return\
+        list(map(lambda line: list(map(lambda e: round(e / div, 2), line)), m))
