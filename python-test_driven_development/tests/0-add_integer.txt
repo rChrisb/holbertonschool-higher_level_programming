@@ -1,9 +1,11 @@
+# tests/0-add_integer.txt
 
+``add_integer()`` returns the addition of is arguments. For
+integers and floats, that value is equivalent to using the ``+``
+operator
 
-def add_integer(a, b=98):
-	return a + b
-
-	"""
+::
+	>>> add_integer = __import__('0-add_integer').add_integer
 	>>> add_integer(8, 10)
 	18
 	>>> add_integer(8, 20)
@@ -20,7 +22,6 @@ def add_integer(a, b=98):
 	78
 	>>> add_integer(8, 80)
 	88
-	>>> add_integer(45, 5)
-	50
-	"""
+
+
 	
