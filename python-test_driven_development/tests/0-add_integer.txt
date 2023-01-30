@@ -8,10 +8,10 @@ operator
 	>>> add_integer = __import__('0-add_integer').add_integer
 	>>> add_integer(8.5, 10)
 	18
-	>>> "hello" = add_integer(8, 20)
+	>>> add_integer(int(float("nan")), 20)
 	Traceback (most recent call last):
 	...
-	SyntaxError: cannot assign to literal
+	ValueError: cannot convert float NaN to integer
 	>>> add_integer(8e911, 30)
 	Traceback (most recent call last):
 	...
