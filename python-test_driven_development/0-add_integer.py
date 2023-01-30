@@ -1,5 +1,11 @@
-#!/usr/bin/python
+#!/usr/bin/python3
+"""  Integers addition """
+
+
 def add_integer(a, b=98):
+    """Write a function that adds 2 integers
+    """
+
     if type(a) is not float and type(a) is not int:
         raise TypeError("a must be an integer")
     if type(b) is not float and type(b) is not int:
