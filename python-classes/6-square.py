@@ -46,7 +46,7 @@ class Square:
         if self.__position[1] == 1:
             print()
         elif self.__position[1] > 1 and self.size > 0:
-            print("\n"*self.__position[1])
+            print("\n"*self.__position[1], end="")
         for n in range(self.__size):
             print(" "*self.__position[0], end="")
             for x in range(self.size):
