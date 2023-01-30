@@ -45,7 +45,7 @@ class Square:
             print()
         if self.__position[1] == 1:
             print()
-        elif self.__position[1] > 1:
+        elif self.__position[1] > 1 and self.size > 0:
             print("\n"*self.__position[1])
         for n in range(self.__size):
             if self.__position[1] <= 1:
