@@ -1,0 +1,26 @@
+
+
+def add_integer(a, b=98):
+	return a + b
+
+	"""
+	>>> add_integer(8, 10)
+	18
+	>>> add_integer(8, 20)
+	28
+	>>> add_integer(8, 30)
+	38
+	>>> add_integer(8, 40)
+	48
+	>>> add_integer(8, 50)
+	58
+	>>> add_integer(8, 60)
+	68
+	>>> add_integer(8, 70)
+	78
+	>>> add_integer(8, 80)
+	88
+	>>> add_integer(45, 5)
+	50
+	"""
+	
