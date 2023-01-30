@@ -6,12 +6,16 @@ operator
 
 ::
 	>>> add_integer = __import__('0-add_integer').add_integer
-	>>> add_integer(8, 10)
+	>>> add_integer(8.5, 10)
 	18
-	>>> add_integer(8, 20)
-	28
-	>>> add_integer(8, 30)
-	38
+	>>> "hello" = add_integer(8, 20)
+	Traceback (most recent call last):
+	...
+	SyntaxError: cannot assign to literal
+	>>> add_integer(8e911, 30)
+	Traceback (most recent call last):
+	...
+	OverflowError: cannot convert float infinity to integer
 	>>> add_integer(8, 40)
 	48
 	>>> add_integer(None, 50)
