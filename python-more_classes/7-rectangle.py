@@ -66,6 +66,14 @@ class Rectangle:
                 else:
                     shape += stringed*self.__width + "\n"
             return shape
+        if type(self.print_symbol) is list:
+            stringed = str(self.print_symbol)
+            for h in range(self.__height):
+                if h == self.__height - 1:
+                    shape += stringed*self.__width
+                else:
+                    shape += stringed*self.__width + "\n"
+            return shape
 
         for h in range(self.__height):
             if h == self.__height - 1:
