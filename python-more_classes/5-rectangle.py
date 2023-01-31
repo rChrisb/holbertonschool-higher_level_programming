@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Eval is magic"""
+"""Detect instance deletion"""
 
 
 class Rectangle:
