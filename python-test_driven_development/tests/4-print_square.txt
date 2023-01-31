@@ -1,4 +1,4 @@
-# tests/4-print_square.py
+# tests/4-print_square.txt
 
 ::
 	>>> print_square = __import__('4-print_square').print_square
