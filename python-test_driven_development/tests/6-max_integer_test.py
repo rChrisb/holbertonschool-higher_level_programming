@@ -8,7 +8,11 @@ class TestMaxInteger(unittest.TestCase):
         self.assertEqual(max_integer([1, 2, 3]), 3)
         self.assertEqual(max_integer([7, 2, 3]), 7)
         self.assertEqual(max_integer([1, 10, 3]), 10)
+        self.assertEqual(max_integer([10]), 10)
         self.assertNotEqual(max_integer([1, 12, 3]), 3)
+        self.assertNotEqual(max_integer([-1, -2, -3]), 3)
+        self.assertNotEqual(max_integer([1, 12, -3]), 3)
+        self.assertNotEqual(max_integer([]), 3)
 
 
 if __name__ == '__main__':
