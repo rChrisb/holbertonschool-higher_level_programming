@@ -52,6 +52,8 @@ class Rectangle:
 
     def __str__(self):
         shape = ""
+        if self.__width == 0 or self.__height == 0:
+            return shape
         for h in range(self.__height):
             if h == self.__height - 1:
                 shape += "#"*self.__width
