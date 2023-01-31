@@ -58,11 +58,12 @@ class Rectangle:
         shape = ""
         if self.__width == 0 or self.__height == 0:
             return shape
+
         for h in range(self.__height):
             if h == self.__height - 1:
-                shape += Rectangle.print_symbol*self.__width
+                shape += self.print_symbol*self.__width
             else:
-                shape += Rectangle.print_symbol*self.__width + "\n"
+                shape += self.print_symbol*self.__width + "\n"
         return shape
 
     def __repr__(self):
