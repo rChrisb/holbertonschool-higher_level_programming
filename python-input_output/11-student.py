@@ -15,9 +15,7 @@ class Student:
         return d
 
     def reload_from_json(self, json):
-        if json is not None:
+        if len(json) > 0:
             self.first_name = json.get("first_name")
             self.last_name = json.get("last_name")
             self.age = json.get("age")
-        else:
-            return
