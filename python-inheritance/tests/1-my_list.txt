@@ -6,3 +6,12 @@
 >>> array.append(1)
 >>> array.print_sorted()
 [1, 12]
+
+>>> array = MyList()
+>>> print(str(array))
+[]
+>>> array.print_sorted()
+[]
+
+
+
