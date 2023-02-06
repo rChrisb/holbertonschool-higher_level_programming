@@ -12,6 +12,7 @@
 []
 >>> array.print_sorted()
 []
-
-
+>>> array.append(-1)
+>>> array.print_sorted()
+[-1]
 
