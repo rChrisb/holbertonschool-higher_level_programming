@@ -1,0 +1,8 @@
+# tets/1-my_list
+
+>>> MyList = __import__('1-my_list').MyList
+>>> array = MyList()
+>>> array.append(12)
+>>> array.append(1)
+>>> array.print_sorted()
+[1, 12]
