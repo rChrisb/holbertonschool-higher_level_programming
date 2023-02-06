@@ -15,4 +15,7 @@
 >>> array.append(-1)
 >>> array.print_sorted()
 [-1]
+>>> new_list = array.print_sorted
+>>> print(new_list)
+<bound method MyList.print_sorted of [-1]>
 
