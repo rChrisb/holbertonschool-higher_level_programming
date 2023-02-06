@@ -6,16 +6,20 @@
 >>> array.append(1)
 >>> array.print_sorted()
 [1, 12]
+[1, 12]
 
 >>> array = MyList()
 >>> print(str(array))
 []
 >>> array.print_sorted()
 []
+[]
 >>> array.append(-1)
 >>> array.print_sorted()
 [-1]
->>> new_list = array.print_sorted
+[-1]
+>>> new_list = array.print_sorted()
+[-1]
 >>> print(new_list)
-<bound method MyList.print_sorted of [-1]>
+[-1]
 
