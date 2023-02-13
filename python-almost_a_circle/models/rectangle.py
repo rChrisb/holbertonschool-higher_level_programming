@@ -54,9 +54,9 @@ class Rectangle(Base):
     def integer_validator(name, value):
         """checks the value"""
         if type(value) is not int:
-            raise TypeError(f"{name} must be an integer" )
+            raise TypeError(f"{name} must be an integer")
         if value <= 0:
-            raise ValueError(f"{name} must be > 0" )
+            raise ValueError(f"{name} must be > 0")
 
     def x_y_validator(name, value):
         """checks the value"""
