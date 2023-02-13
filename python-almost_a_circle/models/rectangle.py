@@ -3,44 +3,45 @@
 
 from models.base import Base
 
+
 class Rectangle(Base):
     """child of 'Base' class"""
 
     def __init__(self, width, height, x=0, y=0, id=None):
         super().__init__(id)
-        self.__width = width
-        self.__height = height
-        self.__x = x
-        self.__y = y
+        self.width = width
+        self.height = height
+        self.x = x
+        self.y = y
 
     @property
     def width(self):
-        return self.__width
+        return self.width
 
     @width.setter
     def width(self, value):
-        self.__width = value
+        self.width = value
 
     @property
     def height(self):
-        return self.__height
+        return self.height
 
     @height.setter
     def width(self, value):
-        self.__height = value
+        self.height = value
 
     @property
     def x(self):
-        return self.__x
+        return self.x
 
     @x.setter
     def width(self, value):
-        self.__x = value
+        self.x = value
 
     @property
     def y(self):
-        return self.__y
+        return self.y
 
     @y.setter
     def width(self, value):
-        self.__y = value
+        self.y = value
