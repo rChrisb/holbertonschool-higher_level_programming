@@ -96,6 +96,9 @@ class Rectangle(Base):
             for key, value in kwargs.items():
                 setattr(self, key, value)
 
+    def to_dictionary(self):
+        return vars(self)
+
     def __str__(self):
         """str method"""
         return f"""[Rectangle] ({self.id}) {self.__x}/{self.__y} \
