@@ -12,7 +12,7 @@ class Square(Rectangle):
 
     @property
     def size(self):
-        return self.height
+        return self.width
 
     @size.setter
     def size(self, value):
@@ -22,4 +22,18 @@ class Square(Rectangle):
 
     def __str__(self):
         return f"[Square] ({self.id}) {self.x}/{self.y} -\
- {self.height}"
+ {self.width}"
+
+    def update(self, *args, **kwargs):
+        """ assigns an argument to each attribute"""
+        if len(args) >= 2:
+            self.width = args[1]
+        if len(args) >= 3:
+            self.x = args[2]
+        if len(args) >= 4:
+            self.y = args[3]
+        if len(args) >= 1:
+            self.id = args[0]
+        else:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
