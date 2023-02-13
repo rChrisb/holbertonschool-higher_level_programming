@@ -98,6 +98,10 @@ class Rectangle(Base):
 
     def to_dictionary(self):
         """return dictionary representation of a Rectangle"""
+        vars(self)["height"] = vars(self).pop("_Rectangle__height")
+        vars(self)["width"] = vars(self).pop("_Rectangle__width")
+        vars(self)["x"] = vars(self).pop("_Rectangle__x")
+        vars(self)["y"] = vars(self).pop("_Rectangle__y")
         return vars(self)
 
     def __str__(self):
