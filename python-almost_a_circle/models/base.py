@@ -29,7 +29,8 @@ class Base:
     def save_to_file(cls, list_objs):
         new_list = []
         if list_objs is None:
-            json.dump(new_list, f"{cls.__name__}.json")
+            with open(f"{cls.__name__}.json", "w") as json_file:
+                json_file.write("[]")
         else:
             for obj in list_objs:
                 new_list.append(cls.to_dictionary(obj))
