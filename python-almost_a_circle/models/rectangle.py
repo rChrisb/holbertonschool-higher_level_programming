@@ -51,8 +51,8 @@ class Rectangle(Base):
 
     @y.setter
     def y(self, value):
-        self.x_y_validator("y", self.__x)
         self.__y = value
+        self.x_y_validator("y", self.__x)
 
     def integer_validator(self, name, value):
         """checks the value"""
