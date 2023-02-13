@@ -80,7 +80,7 @@ class Rectangle(Base):
             print(" " * self.__x, end="")
             print("#" * self.__width)
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """ assigns an argument to each attribute"""
         if len(args) >= 2:
             self.__width = args[1]
@@ -92,6 +92,9 @@ class Rectangle(Base):
             self.__y = args[4]
         if len(args) >= 1:
             self.id = args[0]
+        else:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
 
     def __str__(self):
         """str method"""
