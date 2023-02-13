@@ -47,11 +47,11 @@ class Rectangle(Base):
 
     @property
     def y(self):
-        self.x_y_validator("y", self.__x)
         return self.__y
 
     @y.setter
     def y(self, value):
+        self.x_y_validator("y", self.__x)
         self.__y = value
 
     def integer_validator(self, name, value):
