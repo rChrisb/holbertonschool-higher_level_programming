@@ -37,3 +37,8 @@ class Base:
                 content_json = cls.to_json_string(new_list)
                 with open(f"{cls.__name__}.json", "w") as json_file:
                     json_file.write(content_json)
+
+    def from_json_string(json_string):
+        if json_string is None or len(json_string) == 0:
+            return []
+        return json.loads(json_string)
