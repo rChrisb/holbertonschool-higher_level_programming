@@ -28,7 +28,7 @@ class Base:
     @classmethod
     def save_to_file(cls, list_objs):
         new_list = []
-        if list_objs is None:
+        if list_objs is None or len(list_objs) == 0:
             with open(f"{cls.__name__}.json", "w") as json_file:
                 json_file.write("[]")
         else:
