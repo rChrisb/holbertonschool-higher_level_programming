@@ -40,8 +40,5 @@ class Square(Rectangle):
 
     def to_dictionary(self):
         """return updated dictionary for Square instance"""
-        vars(self)["size"] = vars(self).pop("_Rectangle__height")
-        vars(self)["y"] = vars(self).pop("_Rectangle__y")
-        vars(self)["x"] = vars(self).pop("_Rectangle__x")
-        del vars(self)["_Rectangle__width"]
-        return vars(self)
+
+        return {"id": self.id, "size": self.width, "x": self.x, "y": self.y}
