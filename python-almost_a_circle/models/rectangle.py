@@ -74,7 +74,10 @@ class Rectangle(Base):
 
     def display(self):
         """prints in stdout the Rectangle instance with the character #"""
+        if self.__y > 0:
+            print("\n" * self.__y, end="")
         for w in range(self.__height):
+            print(" " * self.__x, end="")
             print("#" * self.__width)
 
     def update(self, *args):
