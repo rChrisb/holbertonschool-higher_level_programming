@@ -2,6 +2,7 @@
 """ Base class"""
 
 import json
+import os.path
 
 
 class Base:
@@ -56,7 +57,7 @@ class Base:
     @classmethod
     def load_from_file(cls):
         filename = f"{cls.__name__}.json"
-        if filename is None:
+        if os.path.isfile(filename) is False:
             return []
         list = []
         with open(filename, "r") as file:
