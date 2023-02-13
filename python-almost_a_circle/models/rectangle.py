@@ -10,13 +10,13 @@ class Rectangle(Base):
     def __init__(self, width, height, x=0, y=0, id=None):
         super().__init__(id)
         self.__width = width
-        """ self.integer_validator("width", self.__width) """
+        self.integer_validator("width", self.__width)
         self.__height = height
-        """ self.integer_validator("height", self.__height) """
+        self.integer_validator("height", self.__height)
         self.__x = x
-        """ self.x_y_validator("x", self.__x) """
+        self.x_y_validator("x", self.__x)
         self.__y = y
-        """ self.x_y_validator("y", self.__y) """
+        self.x_y_validator("y", self.__y)
 
     @property
     def width(self):
@@ -25,7 +25,7 @@ class Rectangle(Base):
     @width.setter
     def width(self, value):
         self.__width = value
-        """ self.integer_validator("width", self.__width) """
+        self.integer_validator("width", self.__width)
 
     @property
     def height(self):
@@ -34,6 +34,7 @@ class Rectangle(Base):
     @height.setter
     def height(self, value):
         self.__height = value
+        self.integer_validator("height", self.__height)
 
     @property
     def x(self):
@@ -42,23 +43,25 @@ class Rectangle(Base):
     @x.setter
     def x(self, value):
         self.__x = value
+        self.x_y_validator("x", self.__x)
 
     @property
     def y(self):
+        self.x_y_validator("y", self.__x)
         return self.__y
 
     @y.setter
     def y(self, value):
         self.__y = value
 
-    def integer_validator(name, value):
+    def integer_validator(self, name, value):
         """checks the value"""
         if type(value) is not int:
             raise TypeError(f"{name} must be an integer")
         if value <= 0:
             raise ValueError(f"{name} must be > 0")
 
-    def x_y_validator(name, value):
+    def x_y_validator(self, name, value):
         """checks the value"""
         if type(value) is not int:
             raise TypeError(f"{name} must be an integer")
