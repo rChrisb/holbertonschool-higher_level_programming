@@ -67,3 +67,6 @@ class Rectangle(Base):
             raise TypeError(f"{name} must be an integer")
         if value < 0:
             raise ValueError(f"{name} must be >= 0")
+
+    def area(self):
+        return self.__width * self.__height
