@@ -97,6 +97,7 @@ class Rectangle(Base):
                 setattr(self, key, value)
 
     def to_dictionary(self):
+        """return dictionary representation of a Rectangle"""
         return vars(self)
 
     def __str__(self):
