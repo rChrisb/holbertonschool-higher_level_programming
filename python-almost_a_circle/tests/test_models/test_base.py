@@ -5,7 +5,7 @@ import unittest
 from models.base import Base
 
 
-class TestsBaseId(unittest.TestCase):
+class TestsBase(unittest.TestCase):
     def test_base(self):
         # first_base = Base()
         # third_base = Base(89)
@@ -22,10 +22,10 @@ class TestsBaseId(unittest.TestCase):
         self.assertNotEqual(Base().id, 90)
         self.assertEqual(Base().id, 4)
 
-    # def test_id_incremental(self):
-    #     self.assertEqual(Base().id, 5)
-    #     self.assertEqual(Base().id, 6)
+    def test_id_incremental(self):
+        self.assertEqual(Base().id, 5)
+        self.assertEqual(Base().id, 6)
 
-    # def test_not_none(self):
-    #     self.assertNotEqual(Base().id, None)
+    def test_not_none(self):
+        self.assertNotEqual(Base().id, None)
 
