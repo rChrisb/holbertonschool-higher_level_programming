@@ -21,7 +21,3 @@ class TestsBaseId(unittest.TestCase):
         self.assertEqual(Base(89).id, 89)
         self.assertNotEqual(Base().id, 90)
         self.assertEqual(Base().id, 4)
-
-
-if __name__ == '__main__':
-    unittest.main()
