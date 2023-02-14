@@ -87,6 +87,10 @@ class TestsRectangle(unittest.TestCase):
             self.assertEqual(os.path.isfile("Rectangle.json"), True)
             self.assertEqual(fakeOutput.getvalue(), '[]\n')
             
+    def test_save_to_file_creates_file(self):
+        Rectangle.save_to_file([])
+        self.assertEqual(os.path.isfile("Rectangle.json"), True)
+            
     def test_save_to_file_None(self):
         with patch('sys.stdout', new=StringIO()) as fakeOutput:
             Rectangle.save_to_file(None)
