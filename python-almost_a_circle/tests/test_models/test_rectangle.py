@@ -59,5 +59,9 @@ class TestsRectangle(unittest.TestCase):
     
     def test_to_dictionary(self):
         self.assertEqual(Rectangle(1, 1, 1, 1, 7).to_dictionary(), {'id': 7, 'width': 1, 'height':1, 'x': 1, 'y': 1}) 
-    # def test_update(self):
-    #     self.assertEqual()
+    
+    
+    def test_update(self):
+        rectangle = Rectangle(10, 10, 10, 10, 1)
+        rectangle.update(id=4)
+        self.assertEqual(rectangle.id, 4)
