@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 import unittest
-
+import os.path
 from io import StringIO
 from unittest.mock import patch
 
@@ -84,6 +84,7 @@ class TestsRectangle(unittest.TestCase):
             Rectangle.save_to_file([])
             with open("Rectangle.json", "r") as file:
                 print(file.read())
+            self.assertEqual(os.path.isfile("Rectangle.json"), True)
             self.assertEqual(fakeOutput.getvalue(), '[]\n')
             
     def test_save_to_file_None(self):
@@ -92,6 +93,7 @@ class TestsRectangle(unittest.TestCase):
             with open("Rectangle.json", "r") as file:
                 print(file.read())
             self.assertEqual(fakeOutput.getvalue(), '[]\n')
+            self.assertEqual(os.path.isfile("Rectangle.json"), True)
 
     def test_save_to_file_another_None(self):
         with patch('sys.stdout', new=StringIO()) as fakeOutput:
