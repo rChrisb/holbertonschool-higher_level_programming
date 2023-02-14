@@ -39,7 +39,7 @@ class TestsRectangle(unittest.TestCase):
         self.assertEqual(Rectangle(2, 5).area(), 10)
     
     def test_str(self):
-        self.assertEqual(Rectangle(2, 4).__str__(), "[Rectangle] (22) 0/0 - 2/4")
+        self.assertEqual(Rectangle(2, 4).__str__(), "[Rectangle] (23) 0/0 - 2/4")
     
     def test_display_without_xy(self):
         with patch('sys.stdout', new=StringIO()) as fakeOutput:
@@ -50,6 +50,11 @@ class TestsRectangle(unittest.TestCase):
         with patch('sys.stdout', new=StringIO()) as fakeOutput:
             Rectangle(1, 1, 1).display()
             self.assertEqual(fakeOutput.getvalue(), ' #\n')
+
+    def test_display_with_xy(self):
+        with patch('sys.stdout', new=StringIO()) as fakeOutput:
+            Rectangle(1, 1, 1, 1).display()
+            self.assertEqual(fakeOutput.getvalue(), '\n #\n')
         
     # def test_update(self):
     #     self.assertEqual()
