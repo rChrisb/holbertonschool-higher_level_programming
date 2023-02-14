@@ -3,6 +3,11 @@
 import unittest
 
 from models.base import Base
+from models.rectangle import Rectangle
+from models.square import Square
+import os.path
+from io import StringIO
+from unittest.mock import patch
 
 
 class TestsBase(unittest.TestCase):
@@ -34,3 +39,19 @@ class TestsBase(unittest.TestCase):
     
     def test_from_json_string(self):
         self.assertEqual(Base.from_json_string(None), [])
+        
+    def test_save_to_file_None_square(self):
+        with patch('sys.stdout', new=StringIO()) as fakeOutput:
+            Square.save_to_file(None)
+            with open("Square.json", "r") as file:
+                print(file.read())
+            self.assertEqual(fakeOutput.getvalue(), '[]\n')
+            self.assertEqual(os.path.isfile("Square.json"), True)
+    
+    def test_save_to_file_None_rectangle(self):
+        with patch('sys.stdout', new=StringIO()) as fakeOutput:
+            Rectangle.save_to_file(None)
+            with open("Rectangle.json", "r") as file:
+                print(file.read())
+            self.assertEqual(fakeOutput.getvalue(), '[]\n')
+            self.assertEqual(os.path.isfile("Rectangle.json"), True)
