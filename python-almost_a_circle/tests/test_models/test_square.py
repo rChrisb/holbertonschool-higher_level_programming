@@ -90,9 +90,9 @@ class TestsSquare(unittest.TestCase):
             self.assertEqual(fakeOutput.getvalue(), '[]\n')
             os.remove("Rectangle.json")
             
-    # def test_save_to_file_creates_file(self):
-    #     Square.save_to_file(None)
-    #     self.assertEqual(os.path.isfile("Square.json"), True)
+    def test_save_to_file_creates_file(self):
+        Square.save_to_file(None)
+        self.assertEqual(os.path.isfile("Square.json"), True)
             
     def test_save_to_file_None(self):
         Square.save_to_file(None)
