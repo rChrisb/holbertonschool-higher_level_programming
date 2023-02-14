@@ -30,3 +30,4 @@ class TestsRectangle(unittest.TestCase):
         with self.assertRaises(ValueError):
             Rectangle(0, 40).width
         
+        self.assertEqual(Rectangle(1, 1, 1, 20, 41).id, 41)
