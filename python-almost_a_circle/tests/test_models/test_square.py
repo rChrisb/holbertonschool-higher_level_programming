@@ -66,49 +66,49 @@ class TestsSquare(unittest.TestCase):
         square.update(id=4)
         self.assertEqual(square.id, 4)
     
-    # def test_create(self):
-    #     Square = Square(10, 9, 8, 7, 6)
-    #     r_dictionary = Square.to_dictionary()
-    #     second_Square = Square.create(**r_dictionary)
-    #     self.assertEqual(second_Square.id, 6)
+    def test_create(self):
+        square = Square(10, 9, 8, 6)
+        r_dictionary = square.to_dictionary()
+        second_square = square.create(**r_dictionary)
+        self.assertEqual(second_square.id, 6)
         
-    # def test_save_to_file(self):
-    #     with patch('sys.stdout', new=StringIO()) as fakeOutput:
-    #         rect = Square(1, 2)
-    #         rect_2 = Square(3, 3)
-    #         Square.save_to_file([rect, rect_2])
-    #         with open("Square.json", "r") as file:
-    #             print(file.read())
-    #         self.assertEqual(fakeOutput.getvalue(),'[{"id": 28, "size": 1, "height": 2, "x": 0, "y": 0}, {"id": 29, "size": 3, "height": 3, "x": 0, "y": 0}]\n')
+    def test_save_to_file(self):
+        with patch('sys.stdout', new=StringIO()) as fakeOutput:
+            square = Square(1, 0, 0, 33)
+            square_2 = Square(3, 0, 0, 57)
+            Square.save_to_file([square, square_2])
+            with open("Square.json", "r") as file:
+                print(file.read())
+            self.assertEqual(fakeOutput.getvalue(),'[{"id": 33, "size": 1, "x": 0, "y": 0}, {"id": 57, "size": 3, "x": 0, "y": 0}]\n')
     
-    # def test_save_to_file_Empty(self):
-    #     with patch('sys.stdout', new=StringIO()) as fakeOutput:
-    #         Square.save_to_file([])
-    #         with open("Square.json", "r") as file:
-    #             print(file.read())
-    #         self.assertEqual(os.path.isfile("Square.json"), True)
-    #         self.assertEqual(fakeOutput.getvalue(), '[]\n')
+    def test_save_to_file_Empty(self):
+        with patch('sys.stdout', new=StringIO()) as fakeOutput:
+            Square.save_to_file([])
+            with open("Square.json", "r") as file:
+                print(file.read())
+            self.assertEqual(os.path.isfile("Square.json"), True)
+            self.assertEqual(fakeOutput.getvalue(), '[]\n')
             
-    # def test_save_to_file_creates_file(self):
-    #     Square.save_to_file(None)
-    #     self.assertEqual(os.path.isfile("Square.json"), True)
+    def test_save_to_file_creates_file(self):
+        Square.save_to_file(None)
+        self.assertEqual(os.path.isfile("Square.json"), True)
             
-    # def test_save_to_file_None(self):
-    #     with patch('sys.stdout', new=StringIO()) as fakeOutput:
-    #         Square.save_to_file(None)
-    #         with open("Square.json", "r") as file:
-    #             print(file.read())
-    #         self.assertEqual(fakeOutput.getvalue(), '[]\n')
-    #         self.assertEqual(os.path.isfile("Square.json"), True)
+    def test_save_to_file_None(self):
+        with patch('sys.stdout', new=StringIO()) as fakeOutput:
+            Square.save_to_file(None)
+            with open("Square.json", "r") as file:
+                print(file.read())
+            self.assertEqual(fakeOutput.getvalue(), '[]\n')
+            self.assertEqual(os.path.isfile("Square.json"), True)
 
-    # def test_save_to_file_another_None(self):
-    #     with patch('sys.stdout', new=StringIO()) as fakeOutput:
-    #         Square = Square(1, 2)
-    #         x = None
-    #         Square.save_to_file(x)
-    #         with open("Square.json", "r") as file:
-    #             print(file.read())
-    #         self.assertEqual(fakeOutput.getvalue(), '[]\n')
+    def test_save_to_file_another_None(self):
+        with patch('sys.stdout', new=StringIO()) as fakeOutput:
+            square = Square(1)
+            x = None
+            square.save_to_file(x)
+            with open("Square.json", "r") as file:
+                print(file.read())
+            self.assertEqual(fakeOutput.getvalue(), '[]\n')
     
     # def test_load_from_file(self):
     #     with patch('sys.stdout', new=StringIO()) as fakeOutput:
