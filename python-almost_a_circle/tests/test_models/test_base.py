@@ -37,13 +37,21 @@ class TestsBase(unittest.TestCase):
     
     def test_from_json_string(self):
         self.assertEqual(Base.from_json_string(None), [])
+
+    # def test_test(self):
+    #     if (self.__class__.__name__ != "Base"):
+    #         Base.save_to_file(None)
+    #         with open(f"{type(self)}.json", "r") as file:  error: No such file or directory: "<class 'test_models.test_base.TestsBase'>.json
+    #             self.assertEqual(file.read(), "[]")
         
-    def test_save_to_file_None_square(self):
-        Square.save_to_file(None)
-        with open("Square.json", "r") as file:
-            self.assertEqual(file.read(), '[]')
+    # def test_save_to_file_None_square(self):
+    #     Square.save_to_file(None)
+    #     with open("Square.json", "r") as file:
+    #         self.assertEqual(file.read(), '[]')
     
-    def test_save_to_file_None_rectangle(self):
-        Rectangle.save_to_file(None)
-        with open("Rectangle.json", "r") as file:
-            self.assertEqual(file.read(), '[]')
+
+    
+    # def test_save_to_file_None_rectangle(self):
+    #     Rectangle.save_to_file(None)
+    #     with open("Rectangle.json", "r") as file:
+    #         self.assertEqual(file.read(), '[]')

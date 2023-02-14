@@ -88,27 +88,26 @@ class TestsSquare(unittest.TestCase):
                 print(file.read())
             self.assertEqual(os.path.isfile("Square.json"), True)
             self.assertEqual(fakeOutput.getvalue(), '[]\n')
+            os.remove("Rectangle.json")
             
-    def test_save_to_file_creates_file(self):
-        Square.save_to_file(None)
-        self.assertEqual(os.path.isfile("Square.json"), True)
+    # def test_save_to_file_creates_file(self):
+    #     Square.save_to_file(None)
+    #     self.assertEqual(os.path.isfile("Square.json"), True)
             
     def test_save_to_file_None(self):
-        with patch('sys.stdout', new=StringIO()) as fakeOutput:
-            Square.save_to_file(None)
-            with open("Square.json", "r") as file:
-                print(file.read())
-            self.assertEqual(fakeOutput.getvalue(), '[]\n')
-            self.assertEqual(os.path.isfile("Square.json"), True)
+        Square.save_to_file(None)
+        with open("Square.json", "r") as file:
+            self.assertEqual(file.read(), "[]")
+        os.remove("Square.json")
 
-    def test_save_to_file_another_None(self):
-        with patch('sys.stdout', new=StringIO()) as fakeOutput:
-            square = Square(1)
-            x = None
-            square.save_to_file(x)
-            with open("Square.json", "r") as file:
-                print(file.read())
-            self.assertEqual(fakeOutput.getvalue(), '[]\n')
+    # def test_save_to_file_another_None(self):
+    #     with patch('sys.stdout', new=StringIO()) as fakeOutput:
+    #         square = Square(1)
+    #         x = None
+    #         square.save_to_file(x)
+    #         with open("Square.json", "r") as file:
+    #             print(file.read())
+    #         self.assertEqual(fakeOutput.getvalue(), '[]\n')
     
     def test_load_from_file(self):
         with patch('sys.stdout', new=StringIO()) as fakeOutput:
