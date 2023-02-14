@@ -70,6 +70,16 @@ class TestsRectangle(unittest.TestCase):
         second_rectangle = Rectangle.create(**r_dictionary)
         self.assertEqual(second_rectangle.id, 6)
         
+    def test_save_to_file(self):
+        with patch('sys.stdout', new=StringIO()) as fakeOutput:
+            rect = Rectangle(1, 2)
+            rect_2 = Rectangle(3, 3)
+            Rectangle.save_to_file([rect, rect_2])
+            with open("Rectangle.json", "r") as file:
+                print(file.read())
+            self.assertEqual(fakeOutput.getvalue(),'[{"id": 24, "width": 1, "height": 2, "x": 0, "y": 0}, {"id": 25, "width": 3, "height": 3, "x": 0, "y": 0}]\n')
+        
+        
 
     def test_str(self):
-        self.assertEqual(Rectangle(2, 4).__str__(), "[Rectangle] (24) 0/0 - 2/4")
+        self.assertEqual(Rectangle(2, 4).__str__(), "[Rectangle] (26) 0/0 - 2/4")
