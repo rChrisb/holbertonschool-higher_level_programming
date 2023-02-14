@@ -41,13 +41,11 @@ class TestsBase(unittest.TestCase):
         self.assertEqual(Base.from_json_string(None), [])
         
     def test_save_to_file_None_square(self):
-        with patch('sys.stdout', new=StringIO()) as fakeOutput:
-            Square.save_to_file(None)
-            with open("Square.json", "r") as file:
-                self.assertEqual(file.read(), '[]')
+        Square.save_to_file(None)
+        with open("Square.json", "r") as file:
+            self.assertEqual(file.read(), '[]')
     
     def test_save_to_file_None_rectangle(self):
-        with patch('sys.stdout', new=StringIO()) as fakeOutput:
-            Rectangle.save_to_file(None)
-            with open("Rectangle.json", "r") as file:
-                self.assertEqual(file.read(), '[]')
+        Rectangle.save_to_file(None)
+        with open("Rectangle.json", "r") as file:
+            self.assertEqual(file.read(), '[]')
