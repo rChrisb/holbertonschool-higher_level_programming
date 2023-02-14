@@ -110,16 +110,16 @@ class TestsSquare(unittest.TestCase):
                 print(file.read())
             self.assertEqual(fakeOutput.getvalue(), '[]\n')
     
-    # def test_load_from_file(self):
-    #     with patch('sys.stdout', new=StringIO()) as fakeOutput:
-    #         r1 = Square(10, 7, 2, 8)
-    #         r2 = Square(2, 4)
-    #         list_Squares_input = [r1, r2]
-    #         Square.save_to_file(list_Squares_input)
-    #         list_Squares_output = Square.load_from_file()
-    #         for rect in list_Squares_output:
-    #             print("{}".format(rect))
-    #         self.assertEqual(fakeOutput.getvalue(), '[Square] (24) 2/8 - 10/7\n[Square] (25) 0/0 - 2/4\n')
+    def test_load_from_file(self):
+        with patch('sys.stdout', new=StringIO()) as fakeOutput:
+            s1 = Square(10, 7, 2, 88)
+            s2 = Square(2, 0, 0, 99)
+            list_Squares_input = [s1, s2]
+            Square.save_to_file(list_Squares_input)
+            list_Squares_output = Square.load_from_file()
+            for rect in list_Squares_output:
+                print("{}".format(rect))
+            self.assertEqual(fakeOutput.getvalue(), '[Square] (88) 7/2 - 10\n[Square] (99) 0/0 - 2\n')
 
 
     
