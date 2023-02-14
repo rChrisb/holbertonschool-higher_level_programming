@@ -121,8 +121,6 @@ class TestsSquare(unittest.TestCase):
                 print("{}".format(rect))
             self.assertEqual(fakeOutput.getvalue(), '[Square] (88) 7/2 - 10\n[Square] (99) 0/0 - 2\n')
 
-
-    
     
     def test_str(self):
         square = Square(4, 0, 0, 2)
