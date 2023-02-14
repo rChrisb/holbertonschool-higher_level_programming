@@ -38,8 +38,6 @@ class TestsRectangle(unittest.TestCase):
     def test_area(self):
         self.assertEqual(Rectangle(2, 5).area(), 10)
     
-    def test_str(self):
-        self.assertEqual(Rectangle(2, 4).__str__(), "[Rectangle] (23) 0/0 - 2/4")
     
     def test_display_without_xy(self):
         with patch('sys.stdout', new=StringIO()) as fakeOutput:
@@ -65,3 +63,13 @@ class TestsRectangle(unittest.TestCase):
         rectangle = Rectangle(10, 10, 10, 10, 1)
         rectangle.update(id=4)
         self.assertEqual(rectangle.id, 4)
+    
+    def test_create(self):
+        rectangle = Rectangle(10, 9, 8, 7, 6)
+        r_dictionary = rectangle.to_dictionary()
+        second_rectangle = Rectangle.create(**r_dictionary)
+        self.assertEqual(second_rectangle.id, 6)
+        
+
+    def test_str(self):
+        self.assertEqual(Rectangle(2, 4).__str__(), "[Rectangle] (24) 0/0 - 2/4")
