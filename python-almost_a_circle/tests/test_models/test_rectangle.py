@@ -36,7 +36,9 @@ class TestsRectangle(unittest.TestCase):
         self.assertEqual(Rectangle(2, 5).area(), 10)
     
     def test_str(self):
-        self.assertEqual(Rectangle(2, 4).__str__(), "[Rectangle] (21) 0/0 - 2/4")
+        self.assertEqual(Rectangle(2, 4).__str__(), "[Rectangle] (23) 0/0 - 2/4")
     
     def test_display(self):
         self.assertEqual(Rectangle(1, 1, 1, 1).display(), None)
+        self.assertEqual(Rectangle(1, 1, 1).display(), None)
+        self.assertEqual(Rectangle(1, 1).display(), None)
