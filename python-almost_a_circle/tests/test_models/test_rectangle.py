@@ -92,7 +92,15 @@ class TestsRectangle(unittest.TestCase):
             with open("Rectangle.json", "r") as file:
                 print(file.read())
             self.assertEqual(fakeOutput.getvalue(), '[]\n')
+
+    def test_save_to_file_another_None(self):
+        with patch('sys.stdout', new=StringIO()) as fakeOutput:
+            rectangle = Rectangle(1, 2)
+            rectangle.save_to_file(None)
+            with open("Rectangle.json", "r") as file:
+                print(file.read())
+            self.assertEqual(fakeOutput.getvalue(), '[]\n')
         
 
     def test_str(self):
-        self.assertEqual(Rectangle(2, 4).__str__(), "[Rectangle] (26) 0/0 - 2/4")
+        self.assertEqual(Rectangle(2, 4).__str__(), "[Rectangle] (27) 0/0 - 2/4")
