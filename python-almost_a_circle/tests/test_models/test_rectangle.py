@@ -55,6 +55,9 @@ class TestsRectangle(unittest.TestCase):
         with patch('sys.stdout', new=StringIO()) as fakeOutput:
             Rectangle(1, 1, 1, 1).display()
             self.assertEqual(fakeOutput.getvalue(), '\n #\n')
-        
+    
+    
+    def test_to_dictionary(self):
+        self.assertEqual(Rectangle(1, 1, 1, 1, 7).to_dictionary(), {'id': 7, 'width': 1, 'height':1, 'x': 1, 'y': 1}) 
     # def test_update(self):
     #     self.assertEqual()
