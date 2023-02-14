@@ -124,5 +124,6 @@ class TestsSquare(unittest.TestCase):
 
     
     
-    # def test_str(self):
-    #     self.assertEqual(Square(2, 4).__str__(), "[Square] (31) 0/0 - 2/4")
+    def test_str(self):
+        square = Square(4, 0, 0, 2)
+        self.assertEqual(square.__str__(), "[Square] (2) 0/0 - 4")
