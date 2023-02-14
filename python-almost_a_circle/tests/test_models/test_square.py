@@ -11,6 +11,8 @@ from models.square import Square
 class TestsSquare(unittest.TestCase):
     def test_instantiation(self):
         self.assertEqual(Square(1).size, 1)
+        self.assertEqual(Square(1, 1).x, 1)
+        self.assertEqual(Square(5, 2, 1).y, 1)
         with self.assertRaises(TypeError):
             Square("1", 2).size
         with self.assertRaises(TypeError):
