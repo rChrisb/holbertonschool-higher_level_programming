@@ -77,7 +77,7 @@ class TestsRectangle(unittest.TestCase):
             Rectangle.save_to_file([rect, rect_2])
             with open("Rectangle.json", "r") as file:
                 print(file.read())
-            self.assertEqual(fakeOutput.getvalue(),'[{"id": 24, "width": 1, "height": 2, "x": 0, "y": 0}, {"id": 25, "width": 3, "height": 3, "x": 0, "y": 0}]\n')
+            self.assertEqual(fakeOutput.getvalue(),'[{"id": 28, "width": 1, "height": 2, "x": 0, "y": 0}, {"id": 29, "width": 3, "height": 3, "x": 0, "y": 0}]\n')
     
     def test_save_to_file_Empty(self):
         with patch('sys.stdout', new=StringIO()) as fakeOutput:
@@ -88,7 +88,7 @@ class TestsRectangle(unittest.TestCase):
             self.assertEqual(fakeOutput.getvalue(), '[]\n')
             
     def test_save_to_file_creates_file(self):
-        Rectangle.save_to_file([])
+        Rectangle.save_to_file(None)
         self.assertEqual(os.path.isfile("Rectangle.json"), True)
             
     def test_save_to_file_None(self):
@@ -106,7 +106,17 @@ class TestsRectangle(unittest.TestCase):
             with open("Rectangle.json", "r") as file:
                 print(file.read())
             self.assertEqual(fakeOutput.getvalue(), '[]\n')
-        
+    
+    def test_load_from_file(self):
+        with patch('sys.stdout', new=StringIO()) as fakeOutput:
+            r1 = Rectangle(10, 7, 2, 8)
+            r2 = Rectangle(2, 4)
+            list_rectangles_input = [r1, r2]
+            Rectangle.save_to_file(list_rectangles_input)
+            list_rectangles_output = Rectangle.load_from_file()
+            for rect in list_rectangles_output:
+                print("{}".format(rect))
+            self.assertEqual(fakeOutput.getvalue(), '[Rectangle] (24) 2/8 - 10/7\n[Rectangle] (25) 0/0 - 2/4\n')
 
     def test_str(self):
-        self.assertEqual(Rectangle(2, 4).__str__(), "[Rectangle] (27) 0/0 - 2/4")
+        self.assertEqual(Rectangle(2, 4).__str__(), "[Rectangle] (31) 0/0 - 2/4")
