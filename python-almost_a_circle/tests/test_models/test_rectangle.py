@@ -31,3 +31,9 @@ class TestsRectangle(unittest.TestCase):
             Rectangle(0, 40).width
         
         self.assertEqual(Rectangle(1, 1, 1, 20, 41).id, 41)
+        
+    def test_area(self):
+        self.assertEqual(Rectangle(2, 5).area(), 10)
+    
+    def test_str(self):
+        self.assertEqual(Rectangle(2, 4).__str__(), "[Rectangle] (20) 0/0 - 2/4")
