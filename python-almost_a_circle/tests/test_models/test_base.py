@@ -28,4 +28,7 @@ class TestsBase(unittest.TestCase):
 
     def test_not_none(self):
         self.assertNotEqual(Base().id, None)
-
+    
+    def test_to_json(self):
+        self.assertEqual(Base.to_json_string(None), "[]")
+    
