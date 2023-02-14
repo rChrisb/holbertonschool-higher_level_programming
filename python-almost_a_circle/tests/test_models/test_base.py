@@ -44,14 +44,10 @@ class TestsBase(unittest.TestCase):
         with patch('sys.stdout', new=StringIO()) as fakeOutput:
             Square.save_to_file(None)
             with open("Square.json", "r") as file:
-                print(file.read())
-            self.assertEqual(fakeOutput.getvalue(), '[]\n')
-            self.assertEqual(os.path.isfile("Square.json"), True)
+                self.assertEqual(file.read(), '[]')
     
     def test_save_to_file_None_rectangle(self):
         with patch('sys.stdout', new=StringIO()) as fakeOutput:
             Rectangle.save_to_file(None)
             with open("Rectangle.json", "r") as file:
-                print(file.read())
-            self.assertEqual(fakeOutput.getvalue(), '[]\n')
-            self.assertEqual(os.path.isfile("Rectangle.json"), True)
+                self.assertEqual(file.read(), '[]')
