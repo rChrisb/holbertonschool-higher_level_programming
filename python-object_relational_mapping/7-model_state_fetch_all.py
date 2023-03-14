@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 
-"""Filter  by user input"""
+"""All states via SQLAlchemy"""
 
 if __name__ == "__main__":
     from model_state import Base, State
