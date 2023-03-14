@@ -17,8 +17,10 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    if session.query(State)[0]:
-        print(f"{session.query(State)[0].id}: {session.query(State)[0].name}")
+    first_state = session.query(State).first()
+
+    if first_state:
+        print(f"{first_state.id}: {first_state.name}")
     else:
         print("Nothing")
     session.close()
