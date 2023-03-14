@@ -9,6 +9,7 @@ Base = declarative_base()
 
 
 class State(Base):
+    """links to the MySQL table states"""
     __tablename__ = "states"
 
     id = Column(Integer,
@@ -19,7 +20,8 @@ class State(Base):
     name = Column(String(128), nullable=False)
 
 
-connection = MySQLdb.connect(
+if __name__ == "__main__":
+    connection = MySQLdb.connect(
         host='localhost',
         port=3306,
         user="root",
