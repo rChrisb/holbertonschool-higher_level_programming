@@ -26,13 +26,16 @@ if __name__ == "__main__":
         )
 
     results = cursor.fetchall()
-    for row in range(len(results)):
-        if row == len(results) - 1:
-            for (city) in results[row]:
-                print(city)
-        else:
-            for (city) in results[row]:
-                print(city, end=", ")
+    if results:
+        for row in range(len(results)):
+            if row == len(results) - 1:
+                for (city) in results[row]:
+                    print(city)
+            else:
+                for (city) in results[row]:
+                    print(city, end=", ")
+    else:
+        print()
 
     cursor.close()
     connection.close()
