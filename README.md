@@ -4,5 +4,5 @@
 
 ### <p align=center> `Python - projects` </p>
 
-[python-hello_world]()
-[python-if_else_loops_functions]()
+- [python-hello_world]()
+- [python-if_else_loops_functions]()
