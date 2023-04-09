@@ -7,13 +7,14 @@ else {
   const newList = [];
 
   for (let i = 0; i < process.argv.length - 2; i++) {
-    if (max < +process.argv[i]) max = +process.argv[i];
+    if (max < +process.argv.slice(2)[i]) max = +process.argv.slice(2)[i];
   }
-
+  console.log(max);
   for (let i = 0; i < process.argv.slice(2).length; i++) {
-    if (+process.argv.slice(2)[i] !== max) { newList.push(+process.argv.slice(2)[i]); }
+    if (+process.argv.slice(2)[i] !== max)
+      newList.push(+process.argv.slice(2)[i]);
   }
-
+  console.log(newList);
   for (let i = 0; i < newList.length; i++) {
     if (secondMax < +newList[i]) secondMax = +newList[i];
   }
