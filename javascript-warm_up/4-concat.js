@@ -1,6 +1,6 @@
 #!/usr/bin/node
 
-let argumentsList = [];
+const argumentsList = [];
 
 process.argv.forEach((element, index) => {
   if (index > 1) {
