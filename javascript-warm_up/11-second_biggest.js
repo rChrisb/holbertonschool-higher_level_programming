@@ -11,8 +11,7 @@ else {
   }
 
   for (let i = 0; i < process.argv.slice(2).length; i++) {
-    if (+process.argv.slice(2)[i] !== max)
-      newList.push(+process.argv.slice(2)[i]);
+    if (+process.argv.slice(2)[i] !== max) { newList.push(+process.argv.slice(2)[i]); }
   }
 
   for (let i = 0; i < newList.length; i++) {
