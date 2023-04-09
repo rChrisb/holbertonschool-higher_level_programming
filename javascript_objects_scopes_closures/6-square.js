@@ -1,11 +1,11 @@
 #!/usr/bin/node
 
-const oldSquare = require("./5-square.js");
+const oldSquare = require('./5-square.js');
 
 class Square extends oldSquare {
-  charPrint(c) {
+  charPrint (c) {
     if (c) {
-      let line = "";
+      let line = '';
       for (let i = 0; i < this.width; i++) {
         line += c;
       }
