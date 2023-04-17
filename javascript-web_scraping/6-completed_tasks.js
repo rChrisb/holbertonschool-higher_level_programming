@@ -1,10 +1,10 @@
 #!/usr/bin/node
 
-const request = require('request');
+const request = require("request");
 const tasksMap = {};
 request(process.argv[2], (error, response, jsonContent) => {
   if (error) throw error;
-  content = JSON.parse(jsonContent);
+  const content = JSON.parse(jsonContent);
   const tasksCompleted = [];
   content.forEach((task) => {
     if (task.completed) tasksCompleted.push(task);
