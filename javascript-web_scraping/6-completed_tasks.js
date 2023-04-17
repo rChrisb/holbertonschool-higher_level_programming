@@ -1,18 +1,18 @@
 #!/usr/bin/node
 
-const request = require("request");
-const taskMap = {};
+const request = require('request');
+const tasksMap = {};
 request(process.argv[2], (error, response, jsonContent) => {
   if (error) throw error;
   content = JSON.parse(jsonContent);
-  const taskCompleted = [];
+  const tasksCompleted = [];
   content.forEach((task) => {
-    if (task.completed) taskCompleted.push(task);
+    if (task.completed) tasksCompleted.push(task);
   });
-  for (let i = 0; i < taskCompleted.length; i++) {
-    let userId = taskCompleted[i].userId;
-    if (!taskMap[userId]) taskMap[userId] = 1;
-    else taskMap[userId]++;
+  for (let i = 0; i < tasksCompleted.length; i++) {
+    const userId = tasksCompleted[i].userId;
+    if (!tasksMap[userId]) tasksMap[userId] = 1;
+    else tasksMap[userId]++;
   }
-  console.log(taskMap);
+  console.log(tasksMap);
 });
